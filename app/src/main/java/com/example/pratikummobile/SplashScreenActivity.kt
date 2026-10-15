@@ -1,4 +1,4 @@
-package com.example.pratikummobilerifa
+package com.example.pratikummobile
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.pratikummobilerifa.databinding.ActivitySplashScreenBinding
+import com.example.pratikummobile.databinding.ActivitySplashScreenBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

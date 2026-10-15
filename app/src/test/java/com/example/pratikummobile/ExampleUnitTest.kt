@@ -1,4 +1,4 @@
-package com.example.pratikummobilerifa
+package com.example.pratikummobile
 
 import org.junit.Test
 

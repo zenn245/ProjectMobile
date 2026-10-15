@@ -1,15 +1,15 @@
-package com.example.pratikummobilerifa.pertemuan_5
+package com.example.pratikummobile.pertemuan_5
 
 import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
-import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.pratikummobilerifa.R
-import com.example.pratikummobilerifa.databinding.ActivityWebViewBinding
+import com.example.pratikummobile.R
+import com.example.pratikummobile.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {
 
@@ -48,16 +48,20 @@ class WebViewActivity : AppCompatActivity() {
                 binding.AppBarLayout.setExpanded(true, true) // tampilkan
             }
         }
+
+        // Mengaktifkan tombol back dan gesture back pada WebView
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (binding.webView.canGoBack()) {
+                    binding.webView.goBack() // Kembali ke halaman sebelumnya
+                } else {
+                    isEnabled = false
+                    onBackPressedDispatcher.onBackPressed() // Keluar dari activity
+                }
+            }
+        })
     }
 
-    //Mengaktifkan tombol back pada toolbar
-    override fun onBackPressed() {
-        if (binding.webView.canGoBack()) {
-            binding.webView.goBack() // Kembali ke halaman sebelumnya
-        } else {
-            super.onBackPressed() // Keluar dari aplikasi
-        }
-    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {

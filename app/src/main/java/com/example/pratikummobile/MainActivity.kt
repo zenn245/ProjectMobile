@@ -1,4 +1,4 @@
-package com.example.pratikummobilerifa
+package com.example.pratikummobile
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.pratikummobilerifa.databinding.ActivityMainBinding
-import com.example.pratikummobilerifa.pertemuan_4.FourthActivity
-import com.example.pratikummobilerifa.pertemuan_5.FifthActivity
+import com.example.pratikummobile.databinding.ActivityMainBinding
+import com.example.pratikummobile.pertemuan_4.FourthActivity
+import com.example.pratikummobile.pertemuan_5.FifthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.pratikummobilerifa.pertemuan_4
+package com.example.pratikummobile.pertemuan_4
 
 import android.os.Bundle
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.pratikummobilerifa.R
-import com.example.pratikummobilerifa.databinding.ActivityFourthBinding
+import com.example.pratikummobile.R
+import com.example.pratikummobile.databinding.ActivityFourthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 

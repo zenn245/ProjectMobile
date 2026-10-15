@@ -1,4 +1,4 @@
-package com.example.pratikummobilerifa.pertemuan_5
+package com.example.pratikummobile.pertemuan_5
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.pratikummobilerifa.R
-import com.example.pratikummobilerifa.databinding.ActivityFifthBinding
+import com.example.pratikummobile.R
+import com.example.pratikummobile.databinding.ActivityFifthBinding
 
 class FifthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFifthBinding

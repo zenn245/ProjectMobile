@@ -1,11 +1,11 @@
-package com.example.pratikummobilerifa.pertemuan_3
+package com.example.pratikummobile.pertemuan_3
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.pratikummobilerifa.R
+import com.example.pratikummobile.R
 
 class ThirdResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

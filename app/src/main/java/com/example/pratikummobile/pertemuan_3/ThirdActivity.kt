@@ -1,13 +1,10 @@
-package com.example.pratikummobilerifa.pertemuan_3
+package com.example.pratikummobile.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pratikummobilerifa.R
-import com.example.pratikummobilerifa.databinding.ActivityThirdBinding
+import com.example.pratikummobile.databinding.ActivityThirdBinding
 
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
