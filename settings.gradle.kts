@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PratikumMobileRifa"
+rootProject.name = "Zain_pratikum"
 include(":app")
  
