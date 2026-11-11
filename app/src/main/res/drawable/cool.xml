@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M100,20 C55.8,20 20,55.8 20,100 C20,144.2 55.8,180 100,180 C144.2,180 180,144.2 180,100 C180,55.8 144.2,20 100,20 Z"/>
+    <!-- Sunglasses -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M45,75 L90,75 C95,75 97,85 95,95 L90,110 C85,115 55,115 50,110 L45,95 C43,85 43,75 45,75 Z"/>
+    <path
+        android:fillColor="#212121"
+        android:pathData="M110,75 L155,75 C157,75 157,85 155,95 L150,110 C145,115 115,115 110,110 L105,95 C103,85 105,75 110,75 Z"/>
+    <path
+        android:fillColor="#212121"
+        android:pathData="M90,82 L110,82 L110,88 L90,88 Z"/>
+    <!-- Smile -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M70,135 C75,150 125,150 130,135 C125,142 75,142 70,135 Z"/>
+</vector>
