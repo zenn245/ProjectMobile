@@ -30,15 +30,13 @@ class FifthActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             title = "Activity Fifth"
-            subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         binding.btnWebView.setOnClickListener {
-            val intent = Intent(this@FifthActivity, WebViewActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, WebViewActivity::class.java))
         }
     }
 

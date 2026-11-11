@@ -3,13 +3,14 @@ package com.example.pratikummobile
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.pratikummobile.databinding.ActivityMainBinding
 import com.example.pratikummobile.pertemuan_4.FourthActivity
 import com.example.pratikummobile.pertemuan_5.FifthActivity
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.example.pratikummobile.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -26,15 +27,17 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val username = sharedPref.getString("username", null)
+        if (!username.isNullOrEmpty()) {
+            binding.tvUserHeader.text = "Selamat Datang, $username!"
+        }
+
         binding.btnToFourth.setOnClickListener {
             val i = Intent(this@MainActivity, FourthActivity::class.java)
-
-            // Masukkan data extra terlebih dahulu
             i.putExtra("name", "Politeknik Caltex Riau")
             i.putExtra("from", "Rumbai")
             i.putExtra("age", 25)
-
-            // Panggil startActivity HANYA SATU KALI di sini
             startActivity(i)
         }
 
@@ -48,19 +51,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        binding.btnToSeventh.setOnClickListener {
+            val i = Intent(this@MainActivity, SeventhActivity::class.java)
+            startActivity(i)
+        }
+
         binding.btnLogout.setOnClickListener {
-            MaterialAlertDialogBuilder(this)
+            AlertDialog.Builder(this)
                 .setTitle("Konfirmasi Logout")
-                .setMessage("Apakah Anda yakin ingin logout?")
+                .setMessage("Apakah Anda yakin ingin keluar?")
                 .setPositiveButton("Ya") { dialog, _ ->
-                    val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                     val editor = sharedPref.edit()
                     editor.clear()
                     editor.apply()
 
-                    dialog.dismiss()
-
-                    val intent = Intent(this, AuthActivity::class.java)
+                    val intent = Intent(this@MainActivity, AuthActivity::class.java)
                     startActivity(intent)
                     finish()
                 }

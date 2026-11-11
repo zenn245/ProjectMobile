@@ -3,6 +3,7 @@ package com.example.pratikummobile.pertemuan_5
 import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,6 @@ import com.example.pratikummobile.R
 import com.example.pratikummobile.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityWebViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +25,12 @@ class WebViewActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
-
         }
+
+        binding.webView.webViewClient = WebViewClient()
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.loadUrl("https://merdeka.com")
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             title = "Web Merdeka"
@@ -36,27 +39,21 @@ class WebViewActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        binding.webView.webViewClient = WebViewClient()
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://merdeka.com")
-
-        // Agar Toolbar hide/show saat scroll web
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             if (scrollY > oldScrollY) {
-                binding.AppBarLayout.setExpanded(false, true) // sembunyikan
+                binding.appBar.setExpanded(false, true)
             } else if (scrollY < oldScrollY) {
-                binding.AppBarLayout.setExpanded(true, true) // tampilkan
+                binding.appBar.setExpanded(true, true)
             }
         }
 
-        // Mengaktifkan tombol back dan gesture back pada WebView
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (binding.webView.canGoBack()) {
-                    binding.webView.goBack() // Kembali ke halaman sebelumnya
+                    binding.webView.goBack()
                 } else {
                     isEnabled = false
-                    onBackPressedDispatcher.onBackPressed() // Keluar dari activity
+                    onBackPressedDispatcher.onBackPressed()
                 }
             }
         })
@@ -66,6 +63,14 @@ class WebViewActivity : AppCompatActivity() {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
+                true
+            }
+            R.id.action_search -> {
+                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_settings -> {
+                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
