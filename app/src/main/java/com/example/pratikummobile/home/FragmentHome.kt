@@ -18,6 +18,7 @@ import com.example.pratikummobile.pertemuan_6.AuthActivity as SixthAuthActivity
 import com.example.pratikummobile.pertemuan_7.SeventhActivity
 import com.example.pratikummobile.pertemuan_9.NinthActivity
 import com.example.pratikummobile.pertemuan_10.TenthActivity
+import com.example.pratikummobile.pertemuan_11.ElevenActivity
 
 class FragmentHome : Fragment() {
 
@@ -82,6 +83,11 @@ class FragmentHome : Fragment() {
         // Pertemuan 10
         binding.btnToTenth.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
+        }
+
+        // Pertemuan 11
+        binding.btnToEleventh.setOnClickListener {
+            startActivity(Intent(requireContext(), ElevenActivity::class.java))
         }
 
         // Pertemuan 6: Logout (konfirmasi AlertDialog + hapus SharedPreferences)

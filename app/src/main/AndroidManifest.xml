@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.PratikumMobileRifa">
         <activity
             android:name=".SplashScreenActivity"
@@ -76,6 +77,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".pertemuan_10.TenthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".pertemuan_11.ElevenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

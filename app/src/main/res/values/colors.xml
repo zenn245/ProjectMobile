@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Hijau">#4900BCD4</color>
     <color name="bg_light">#F7F2FA</color>
+    <color name="abu_gelap">#808080</color>
 </resources>
